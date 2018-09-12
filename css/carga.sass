@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+$color-primario: #e68a00 
+h1 
+    display: block
+    text-align: center
+    width: 100vw
+    text-decoration: none
+    text-transform: uppercase
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter
+    padding-bottom: 10vh
+    // padding: 50px
+
+section
+    display: flex
+    align-items: center
+    justify-content: space-around
+    flex-wrap: wrap
+
+.contenedor
+    display: inline-block
+    background: #cecaca
+    border-radius: 50%
+    width: 100px
+    height: 100px
+    position: relative
+    margin: 10px
+
+.contenedor-1:after
+    content: ''
+    background: none
+    width: 100px
+    height: 100px
+    position: absolute
+    border-radius: 50%
+    border: 4px solid transparent
+    border-bottom-color: $color-primario
+    border-top-color: $color-primario
+    top: -4px
+    left: -4px
+    animation: spinny 1.5s linear infinite
+
+    @keyframes spinny
+        0%
+            transform: scale(1) rotate(0deg)
+        50%, 60%
+            transform: scale(1.25) rotate(90deg)
+        100%
+            transform: scale(1) rotate(360deg)
+
+.contenedor-2
+    &:after, &:before
+        content: ''
+        width: 100px
+        height: 100px
+        position: absolute
+        border-radius: 50%
+        background: $color-primario
+        animation: menos 3s linear infinite
+ 
+    &:before
+        animation: menos 2s linear infinite
+
+    @keyframes menos
+        0%
+            transform: scale(0) 
+            opacity: 1
+        100%
+            transform: scale(1) 
+            opacity: 0
+
+.contenedor-3
+    // transform: rotate(90deg)
+    // position: absolute
+    &::after
+        content: ''
+        width: 4px
+        height: 55px
+        background-color: $color-primario
+        position: absolute
+        left: 50%
+        top: 50%
+        //  transform: rotate(90deg)
+        transform-origin: top center
+        animation: spin 1.5s ease alternate-reverse infinite
+
+        @keyframes spin
+            0%
+                transform: rotate(0deg)
+                opacity: 0.2
+                height: 50%
+            
+                
+            100%
+                transform: rotate(360deg)
+                opacity: 1
+                height: 50px
+
+.contenedor-4
+    // transform: rotate(90deg)
+    // position: absolute
+    background: none
+    border: 8px solid #cecaca
+    animation: saltar 1s alternate-reverse infinite
+    top: 35px
+    &::after
+        content: ''
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        background-color: $color-primario
+        position: absolute
+        right: 35px
+        top: 70px
+        //  transform: rotate(90deg)
+        //transform-origin: top center
+        animation: saltar 1s alternate-reverse infinite
+
+        @keyframes saltar
+            0%
+                transform: translateY(0px)
+            
+                
+            90%, 100%
+                transform: translateY(-35px)
+     
+
+       
